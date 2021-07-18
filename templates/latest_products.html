@@ -1,0 +1,32 @@
+{% load static %}
+
+<!-- chunki media fayllarni yonalishi ham static qilib yoziladi -->
+
+
+<!-- =============== SECTION 2 =============== -->
+<section class="padding-bottom">
+
+    <header class="section-heading mb-4">
+        <h3 class="title-section">Latest products</h3>
+    </header>
+    
+    <div class="row row-sm">
+
+        {% for product in latest_products %}
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                <div href="#" class="card card-sm card-product-grid">
+                    <a href="#" class="img-wrap"><img src="{% get_media_prefix %}{{product.image}}"></a>
+                    <figcaption class="info-wrap">
+                        <a href="#" class="title">{{product.title}}</a>
+                        <div class="price-wrap">
+                            <span class="price">{{product.price}} so'm</span>
+                        </div>
+                    </figcaption>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+    </section>
+    <!-- =============== SECTION 2 END =============== -->
